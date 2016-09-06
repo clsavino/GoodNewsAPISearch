@@ -1,12 +1,30 @@
 #emailInput, #emailSubmit{
-	font-size: 2em;
+	font-size: 1em;
 }
 
 .box{
-	height: 300px;
+	min-height: 300px;
 	background-color: white;
-	border: 5px solid black;
-	border-radius: 5px;
+	border: 1px solid #336699;
 	margin-top: 20px;
-	margin-bottom: 150px;
+	margin-bottom: 20px;
+}
+
+p.navbar-text {
+	color: #777777;
+}
+
+#results p {
+	display: inline-block;
+	margin: 0 auto;
+}
+
+
+#results img {
+	width: 240px;
+	height: 180px;
+}
+
+h2 {
+	text-align: center;
 }
