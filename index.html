@@ -11,13 +11,13 @@
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-1L94saFXWAvEw88RkpRz8r28eQMvt7kG9ux3DdCqya/P3CfLNtgqzMnyaUa49Pl2" crossorigin="anonymous">
 
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
 	<!-- jQuery Reference -->
 	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 	<!-- Firebase Reference -->
 	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
@@ -41,9 +41,9 @@
 
     
     	<div class="row well">
-      		<header class="col-md-12 text-center">
+      		<header class="col-md12 text-center">
         		<h1>Good News</h1>
-            <h3>Informative Uplifting Inspiring<h3>
+            <h3>News and Photos That Will Make You Feel Good<h3>
       		</header>
     	</div>
 
@@ -56,48 +56,75 @@
     	</div>
 		-->
 
-    	<div class="row">
-          
-          <div class="col-md12">
-          <div class="col-md-5"> 
-          <h4>Trending Good News</h4>          
-          </div>
+    	<div class="row">         
+          <div class="col-md-12">
+            <div class="col-md-6"> 
+            <h4>Trending Good News</h4>          
+            </div>
 
             <script src="https://www.reddit.com/r/UpliftingNews/.embed?limit=5&t=all" type="text/javascript"></script>
-
-          <div class="col-md-2">
-          </div>          
-          <div class="col-md-5">
-          <h4>Trending Good Pics</h4>
-          </div>
           </div>
       </div>
 
+      <div class="row box">
+
+        <div class="row goodNewsPics">
+          <div class="col-md-12" >                 
+            <div class="col-md-6">
+              <h4>Select the photos that will make you "feel good"</h4>
+            </div>
+
+            <div class="col-md-6"> 
+             
+                <button type="button" class="btn btn-primary" id="babyAnimals">Baby Animals</button>
+
+                <button type="button" class="btn btn-primary" id="puppies">Puppies</button>
+ 
+                <button type="button" class="btn btn-primary" id="kittens">Kittens</button>
+
+                <button type="button" class="btn btn-primary" id="monkeys">Monkeys</button>
+
+                <button type="button" class="btn btn-success" id="reset">Reset</button>
+              
+            </div> <!-- end of col md 6 -->
+          </div>   <!-- end of col md 12 -->        
+        </div>     <!-- end of row --> 
+
+        <div class="row">
+          <div class="col-md-12" id="results">
+          </div>
+        </div> <!-- end of  this row -->
+
+      </div> <!--end of row for whole cute pics div -->
+
+      <!-- 
       <div class="row">   
-          <div class="col-md12"> 
-      		<div class="col-md-6 goodNews box">       		
-      		</div>
-          <div class="col-md-1">
-          </div>          
-      		<div class="col-md-5 goodNewsPics box">
-      		</div>
+          <div class="col-md-12"> 
+        		<div class="col-md-6 goodNews box">       		
+        		</div>
+            <div class="col-md-1">
+            </div>          
+        		<div class="col-md-5 goodNewsPics box" id="results">
+        		</div>
           </div>
       </div>
-    	<div class="row">
-      
+      -->
+
+    	<div class="row">      
     	</div>
     
 	</div>	<!-- main container close -->
 
-    <nav class="navbar navbar-default navbar-fixed-bottom">
+    <!--<nav class="navbar navbar-default navbar-fixed-bottom">-->
+    <nav class="navbar navbar-default">
     	<div class="container-fluid">
-        <p class="navbar-text pull-left">&copy;Copyright 2016 Good Vibrations</p>
+        <p class="navbar-text pull-left">&copy;Copyright 2016 Good Vibes</p>
      	
-        <form class="navbar-form pull-right" role="search">
+        <form class="navbar-form pull-right" role="email">
         <div class="form-group">
-        <input type="text" class="form-control" placeholder="Enter your email address">
+        <input type="text" class="form-control" id="emailInput" placeholder="Enter your email address">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default" id="emailBtn">Submit</button>
       	</form>   	      
     </nav>
 
