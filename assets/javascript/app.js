@@ -226,7 +226,9 @@ function resultsShown() {
                     // checking to see if the photo has the specified width of 240px
                     if (size.sizes.size[1].width == selected_size) {
                         //if it does  prepend it on the page in #results
-                            $("#results").prepend('<p><a href="'+ size.sizes.size[1].url + '" target="_blank"><img src="'+ size.sizes.size[1].source +'"/></a></p>');
+                        photoSource = size.sizes.size[1].source;
+                        console.log('size.sizes.size[1].source', photoSource);
+                        $("#results").prepend('<p><a href="'+ size.sizes.size[1].url + '" target="_blank"><img src="'+ size.sizes.size[1].source +'"/></a></p>');
                     };
                 }); //end of .getJSON(apiurl_size,function(size)               
             };//end of if (idArray.indexOf(myresult.owner)
