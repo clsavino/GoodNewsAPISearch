@@ -64,7 +64,7 @@ $("#emailBtn").on("click", function(event){
         var option = $(this).val();
         switch(option) {
             case "babyAnimals":
-                picTag="&tags=cute,animal,babies,-people,-puppies,-kitten,-beanie,-barbie,-toys,-sl,-sylvanian,-blackandwhite,-monochrome,-goldeneye";
+                picTag="&tags=cute,animal,babies,-people,-puppies,-kitten,-beanie,-barbie,-toys,-toy,-sl,-sylvanian,-blackandwhite,-monochrome,-goldeneye";
                 pageNum++;
                 console.log('pageNum' , pageNum);
                 apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
@@ -83,15 +83,6 @@ $("#emailBtn").on("click", function(event){
                 picTag="&tags=cute,animal,monkeys,-people,-dog,-giraffes,-bird,-duck,-fun,-black,-blackandwhite,-textile,-spoonflower,-monochrome,-phallus";
                 apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
             break;
-            case "pandas":
-                picTag="&tags=cute,pandas,animal,-girl,-people,-portrait,-toys,-pattern,-design,-fun,-Chengdu,-shirt,-monochrome";
-                pandaPageNum++;
-                //only 17 pages with Panda photos
-                if (pandaPageNum > 17) {
-                    pandaPageNum = 1;
-                };
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pandaPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
-                break;
         }
         
         $("#results").html('');
