@@ -1,3 +1,4 @@
+ $(document).ready(function(){
  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDGTncnIHRull__Yir9rcAeymPrEjC5nKY",
@@ -21,7 +22,7 @@ $.ajax(
                     console.log(searchResult);
                     console.log("URL: " + searchResult.data.url);
                     var title = searchResult.data.title;
-                    $('#test').append('<a href="' + searchResult.data.url + '">' + '<img src="' + searchResult.data.thumbnail + '"/>' + title + '</a>' + '<br>');
+                    $('#redditNews').append('<a href="' + searchResult.data.url + '">' + '<img src="' + searchResult.data.thumbnail + '"/>' + title + '</a>' + '<br>');
                 });
             } else {
                 console.log("No subreddits match the search query!");
@@ -70,85 +71,144 @@ $("#emailBtn").on("click", function(event){
 	return false;
 });
 
-$(document).ready(function(){
-	$("#babyAnimals").click(function(){
-		picTag="&tags=cute,animal,babies,-people,-puppies,-kitten,-beanie,-barbie,-toys,-sl,-sylvanian,-blackandwhite,-monochrome,-goldeneye";
-		userPageNum++;
-		console.log('userPageNum' , userPageNum);
-		apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + userPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
-		displayPhotos();
-	})
+// $(document).ready(function(){
+// 	$("#babyAnimals").click(function(){
+// 		picTag="&tags=cute,animal,babies,-people,-puppies,-kitten,-beanie,-barbie,-toys,-sl,-sylvanian,-blackandwhite,-monochrome,-goldeneye";
+// 		userPageNum++;
+// 		console.log('userPageNum' , userPageNum);
+// 		apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + userPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
+// 		displayPhotos();
+// 	})
+// });
+
+// $(document).ready(function(){
+// 	$("#puppies").click(function(){
+// 		picTag="&tags=cute,animal,puppies,-people,-barbie,-toys,-diy,-sylvanian,-blackandwhite,-monochrome";
+// 		userPageNum++;
+// 		apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + userPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
+// 		displayPhotos();
+// 	})
+// });
+
+// $(document).ready(function(){
+// 	$("#kittens").click(function(){
+// 		picTag="&tags=cute,animal,kittens,-people,-barbie,-blackandwhite,-monochrome-toys,-sylvanian,";
+// 		userPageNum++;
+// 		apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + userPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
+// 		displayPhotos();
+// 	})
+// });
+
+// $(document).ready(function(){
+// 	$("#monkeys").click(function(){
+// 		picTag="&tags=cute,animal,monkeys,-giraffes,-people,-dog,-bird,-duck,-fun,-textile,-black,-spoonflower,-blackandwhite,-monochrome";
+// 		userPageNum++;
+// 		apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + userPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
+// 		displayPhotos();
+// 	})
+// });
+
+// $(document).ready(function(){
+// 	$("#reset").click(function(){
+// 		$("#results").html('');
+// 	})
+// });
+
+// function displayPhotos() {
+// 	// get a json object from the Flickr API
+// 	$.getJSON(apiurl,function(json){
+// 		// all photos requested
+// 		$results = json.photos;
+// 		console.log('json object ', $results);
+
+// 		// for each photo get the photo info and use its id to get the right size
+// 		$.each(json.photos.photo,function(i,myresult){
+// 			//console.log('myresult ', myresult);
+// 			//console.log('owner id ', myresult.owner);
+// 			// Check to see if this owner has a photo on the page already
+// 			// if not use photo else don't use it
+// 			if (idArray.indexOf(myresult.owner) === -1) {
+// 				// this owner not in array of owners - continue
+// 				// push owner's id into array
+// 				owner = myresult.owner;
+// 				idArray.push(owner);
+// 				//console.log('idArray ', idArray);
+// 				// get all the sizes of that photo by using its id (myresult.id)
+// 				apiurl_size = "https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&photo_id=" + myresult.id + "&format=json&nojsoncallback=1";
+
+// 				// get object of the photo in the selected size
+// 				$.getJSON(apiurl_size,function(size){
+// 					//console.log('size[3] ', size.sizes.size[3]);
+// 					// checking to see if the photo has the specified width of 240px
+// 					if (size.sizes.size[3].width == selected_size) {
+// 						//if it does  prepend it on the page in #results
+// 						$("#results").prepend('<p><a href="'+ size.sizes.size[3].url +'" target="_blank"><img src="'+ size.sizes.size[3].source +'"/></a></p>');
+// 					};
+
+// 				});// end of .getJSON
+// 			};//end of if (idArray.indexOf(myresult.owner)
+
+// 		});
+
+// 	});
+// }
+//     
+
+
+// $(document).ready(function(){
+    $("#Cutie").on("change", function(){
+        var option = $(this).val();
+        switch(option) {
+            case "babyAnimals":
+                picTag="&tags=cute,animal,babies,-people,-puppies,-kitten,-barbie,-toys,-sylvanian,-blackandwhite,-monochrome";
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=10&format=json&nojsoncallback=1";
+            break;
+            case "puppies":
+                picTag="&tags=cute,animal,puppies,-people,-barbie,-toys,-diy,-sylvanian,-blackandwhite,-monochrome";
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=10&format=json&nojsoncallback=1";
+            break;
+            case "kittens":
+                picTag="&tags=cute,animal,kittens,-people,-barbie,-blackandwhite,-monochrome-toys,-sylvanian,";
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=10&format=json&nojsoncallback=1";
+            break;
+            case "monkeys":
+                picTag="&tags=cute,animal,monkeys,-people,-dog,-textile,-spoonflower,-monochrome";
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=10&format=json&nojsoncallback=1";
+            break;
+            case "pandas":
+                picTag="&tags=cute,pandas,animal,-girl,-people,-portrait,-toys,-pattern,-design,-fun,-Chengdu,-shirt,-monochrome";
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=10&format=json&nojsoncallback=1";
+                break;
+        }
+        
+        $("#results").html('');
+        resultsShown();
+    });
+    //$("#reset").click(function(){
+    //  $("#subSection").html('');
+    //});
+    // $("#button").click(function(){
+    function resultsShown() {
+        $.getJSON(apiurl,function(json) {
+            $results = json.photos;
+            console.log('json.photos ', $results);
+            $.each(json.photos.photo,function(i,myresult){
+                console.log('myresult ', myresult);
+                apiurl_size = "https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&photo_id="+myresult.id+"&format=json&nojsoncallback=1";
+                console.log('apiurl_size ', apiurl_size);
+                $.getJSON(apiurl_size,function(size){
+                    console.log('size ', size);
+                    $.each(size.sizes.size,function(i,myresult_size){
+                        console.log('myresult_size ', myresult_size);
+                        console.log(myresult_size.url);
+                        console.log(myresult_size.source);
+                        if(myresult_size.width==selected_size){
+                            $("#results").prepend('<p><a href="'+myresult_size.url+'" target="_blank"><img src="'+myresult_size.source+'"/></a></p>');
+                        }
+                    });
+                });
+            });
+        });
+    //});
+    }
 });
-
-$(document).ready(function(){
-	$("#puppies").click(function(){
-		picTag="&tags=cute,animal,puppies,-people,-barbie,-toys,-diy,-sylvanian,-blackandwhite,-monochrome";
-		userPageNum++;
-		apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + userPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
-		displayPhotos();
-	})
-});
-
-$(document).ready(function(){
-	$("#kittens").click(function(){
-		picTag="&tags=cute,animal,kittens,-people,-barbie,-blackandwhite,-monochrome-toys,-sylvanian,";
-		userPageNum++;
-		apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + userPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
-		displayPhotos();
-	})
-});
-
-$(document).ready(function(){
-	$("#monkeys").click(function(){
-		picTag="&tags=cute,animal,monkeys,-giraffes,-people,-dog,-bird,-duck,-fun,-textile,-black,-spoonflower,-blackandwhite,-monochrome";
-		userPageNum++;
-		apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + userPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
-		displayPhotos();
-	})
-});
-
-$(document).ready(function(){
-	$("#reset").click(function(){
-		$("#results").html('');
-	})
-});
-
-function displayPhotos() {
-	// get a json object from the Flickr API
-	$.getJSON(apiurl,function(json){
-		// all photos requested
-		$results = json.photos;
-		console.log('json object ', $results);
-
-		// for each photo get the photo info and use its id to get the right size
-		$.each(json.photos.photo,function(i,myresult){
-			//console.log('myresult ', myresult);
-			//console.log('owner id ', myresult.owner);
-			// Check to see if this owner has a photo on the page already
-			// if not use photo else don't use it
-			if (idArray.indexOf(myresult.owner) === -1) {
-				// this owner not in array of owners - continue
-				// push owner's id into array
-				owner = myresult.owner;
-				idArray.push(owner);
-				//console.log('idArray ', idArray);
-				// get all the sizes of that photo by using its id (myresult.id)
-				apiurl_size = "https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&photo_id=" + myresult.id + "&format=json&nojsoncallback=1";
-
-				// get object of the photo in the selected size
-				$.getJSON(apiurl_size,function(size){
-					//console.log('size[3] ', size.sizes.size[3]);
-					// checking to see if the photo has the specified width of 240px
-					if (size.sizes.size[3].width == selected_size) {
-						//if it does  prepend it on the page in #results
-						$("#results").prepend('<p><a href="'+ size.sizes.size[3].url +'" target="_blank"><img src="'+ size.sizes.size[3].source +'"/></a></p>');
-					};
-
-				});// end of .getJSON
-			};//end of if (idArray.indexOf(myresult.owner)
-
-		});
-
-	});
-}
-    

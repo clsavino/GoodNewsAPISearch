@@ -23,6 +23,7 @@
 	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
 </head>
 <body>
+
 <!-- 
 	<nav class="navbar navbar-default">
       <div class="container">
@@ -37,88 +38,47 @@
       </div>
     </nav>
 -->
+
     <div class="container">
-
-    
-    	<div class="row well">
-      		<header class="col-md-12 text-center">
-        		<h1>Good News</h1>
-            <h3>News and Photos That Will Make You Feel Good<h3>
+   
+    	<div class="row"> <!--row1-->
+      		<header class="col-md-12 text-center well pageHeader">
+        		<h1><strong>Good News</strong></h1>
+            <h4>News and Photos That Will Make You Feel Good<h4>
       		</header>
-    	</div>
+    	</div> <!--row1-->
 
-    	<!-- Move to footer 
-    	<div class="row text-center">
-      		<form id="userEmail">
-        		<input type="text" id="emailInput" placeholder="Enter your email">
-        		<input type="submit" id="emailSubmit" value="Subscribe">
-      		</form>
-    	</div>
-		-->
+      <div class="row"> <!--row2-->
 
-    	<div class="row">         
-          <div class="col-md-12">
-            <div class="col-md-6"> 
-            <h4>Trending Good News</h4>          
-            </div>
+        <div class="col-md-6 box" id="redditNews">
+          <h4 class="text-center">Trending Good News</h4>
+        </div>
+      
+        <div class="col-md-6 box goodNewsPics text-center" id="results">
+          <h4>Select the photos that will make you "feel good"</h4>
 
-            <div class="row">
-              <div class="col-md-12" id="test">
-              </div>
-            </div> <!-- end of  this row -->
+<!--           <button type="button" class="btn btn-primary" id="babyAnimals">Baby Animals</button>
 
-            <!-- <script src="https://www.reddit.com/r/UpliftingNews/.embed?limit=5&t=all" type="text/javascript"></script> -->
-
-          </div>
-      </div>
-
-      <div class="row box">
-
-        <div class="row goodNewsPics">
-          <div class="col-md-12" >                 
-            <div class="col-md-6">
-              <h4>Select the photos that will make you "feel good"</h4>
-            </div>
-
-            <div class="col-md-6"> 
-             
-                <button type="button" class="btn btn-primary" id="babyAnimals">Baby Animals</button>
-
-                <button type="button" class="btn btn-primary" id="puppies">Puppies</button>
+          <button type="button" class="btn btn-primary" id="puppies">Puppies</button>
  
-                <button type="button" class="btn btn-primary" id="kittens">Kittens</button>
+          <button type="button" class="btn btn-primary" id="kittens">Kittens</button>
 
-                <button type="button" class="btn btn-primary" id="monkeys">Monkeys</button>
+          <button type="button" class="btn btn-primary" id="monkeys">Monkeys</button>
 
-                <button type="button" class="btn btn-success" id="reset">Reset</button>
-              
-            </div> <!-- end of col md 6 -->
-          </div>   <!-- end of col md 12 -->        
-        </div>     <!-- end of row --> 
+          <button type="button" class="btn btn-success" id="reset">Reset</button> -->
 
-        <div class="row">
-          <div class="col-md-12" id="results">
+          <div class="dropdown">
+            <select class="options" id="Cutie">
+              <option>------Choose Picture Type------</option>
+              <option value="babyAnimals">Baby Animals</option>
+              <option value="puppies">Puppies</option>
+              <option value="kittens">Kittens</option>
+              <option value="monkeys">Monkeys</option>
+            </select>
           </div>
-        </div> <!-- end of  this row -->
 
-      </div> <!--end of row for whole cute pics div -->
-
-      <!-- 
-      <div class="row">   
-          <div class="col-md-12"> 
-        		<div class="col-md-6 goodNews box">       		
-        		</div>
-            <div class="col-md-1">
-            </div>          
-        		<div class="col-md-5 goodNewsPics box" id="results">
-        		</div>
-          </div>
-      </div>
-      -->
-
-    	<div class="row">      
-    	</div>
-    
+      </div> <!--row2-->
+  
 	</div>	<!-- main container close -->
 
     <!--<nav class="navbar navbar-default navbar-fixed-bottom">-->
