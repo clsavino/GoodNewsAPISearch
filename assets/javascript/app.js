@@ -181,7 +181,7 @@ $("#emailBtn").on("click", function(event){
                 break;
         }
         
-        $("#results").html('');
+        $("#subresults").html('');
         resultsShown();
     });
     //$("#reset").click(function(){
@@ -203,7 +203,7 @@ $("#emailBtn").on("click", function(event){
                         console.log(myresult_size.url);
                         console.log(myresult_size.source);
                         if(myresult_size.width==selected_size){
-                            $("#results").prepend('<p><a href="'+myresult_size.url+'" target="_blank"><img src="'+myresult_size.source+'"/></a></p>');
+                            $("#subresults").prepend('<p><a href="'+myresult_size.url+'" target="_blank"><img src="'+myresult_size.source+'"/></a></p>');
                         }
                     });
                 });
