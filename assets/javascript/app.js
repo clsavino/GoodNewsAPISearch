@@ -7,29 +7,31 @@
   };
   firebase.initializeApp(config);
 
-  var searchTerm = 'good news';
+  var searchTerm = 'UpliftingNews';
 
-// $.ajax(
-//     "https://www.reddit.com/subreddits/search.json",
-//     {
-//         data: { q: searchTerm },
-//         success: function(responseData) {
-//             if (responseData.data.children.length > 0) {
-//                 console.log('# of results: ' + responseData.data.children.length);
-//                 $.each(responseData.data.children, function(idx, searchResult) {
-//                     console.log("--- Title of Subreddit: " + searchResult.data.title);
-//                     console.log(searchResult);
-//                     $('.goodNews').append(searchResult.data.title);
-//                 });
-//             } else {
-//                 console.log("No subreddits match the search query!");
-//             }
-//         },
-//         error: function() {
-//             alert("Something didn't work!");
-//         }
-//     }
-// );
+$.ajax(
+    "https://www.reddit.com//r/" + searchTerm + ".json",
+    {
+        // data: { q: searchTerm },
+        success: function(responseData) {
+            if (responseData.data.children.length > 0) {
+                console.log('# of results: ' + responseData.data.children.length);
+                $.each(responseData.data.children, function(idx, searchResult) {
+                    console.log("--- Title of Subreddit: " + searchResult.data.title);
+                    console.log(searchResult);
+                    console.log("URL: " + searchResult.data.url);
+                    var title = searchResult.data.title;
+                    $('#test').append('<a href="' + searchResult.data.url + '">' + '<img src="' + searchResult.data.thumbnail + '"/>' + title + '</a>' + '<br>');
+                });
+            } else {
+                console.log("No subreddits match the search query!");
+            }
+        },
+        error: function() {
+            alert("Something didn't work!");
+        }
+    }
+);
 var database = firebase.database(); 
 
 var apiurl,apiurl_size,myresult,size,selected_size,picTag;
