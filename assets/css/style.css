@@ -33,8 +33,22 @@ h2 {
 
 /*new styling below*/
 
+body{
+	background-image: url(../images/concrete_seamless.png);
+}
+
 .pageHeader{
 	background-image: url(http://wallpapersdesktops.com/wp-content/uploads/2015/11/double-rainbow-10.jpeg);
 	background-size: cover;
 	background-position: center center;
+}
+
+.options{
+	font-size: 5em;
+}
+
+img{
+	margin: 10px;
+	border: 2px solid black;
+	border-radius: 5px;
 }
