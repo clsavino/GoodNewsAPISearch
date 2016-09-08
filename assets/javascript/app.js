@@ -15,7 +15,7 @@ var idArray = [];
 var owner = '';
 var email ='';
 var pageNum = 1;
-var pandaPageNum = pageNum;
+var numPhotos = 0;
 
 // Load news stories so they appear on page load
 var searchTerm = 'UpliftingNews';
@@ -27,6 +27,7 @@ photoResults();
 //create on change function for news dropdownbox 
  $("#newsChoice").on("change", function(){
         var option1 = $(this).val();
+        console.log('option1 ', option1);
         switch(option1) {
             case "uplifting":
                 searchTerm = "UpliftingNews";
@@ -42,7 +43,7 @@ photoResults();
         //clears div
         $("#newsLinks").html('');
         newsResults(); //calls news results function 
-    });
+ });
 
 //wraps function around ajax call appending news results into div
 function newsResults(){
@@ -58,7 +59,9 @@ $.ajax(
                     console.log(searchResult);
                     console.log("URL: " + searchResult.data.url);
                     var title = searchResult.data.title;
-                    $('#redditNews').append('<div class="redditResult"><a href="' + searchResult.data.url + '">' + '<img src="' + searchResult.data.thumbnail + '"/>' + title + '</a></div>' + '<br>');
+                    if (searchResult.data.thumbnail != "self" ) {
+                        $('#newsLinks').prepend('<div class="redditResult"><a href="' + searchResult.data.url + '">' + '<img src="' + searchResult.data.thumbnail + '"/>' + title + '</a></div>' + '<br>');
+                    };
                 });
             } else {
                 console.log("No subreddits match the search query!");
@@ -97,7 +100,7 @@ $("#emailBtn").on("click", function(event){
                 apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
             break;
             case "puppies":
-                picTag="&tags=cute,animal,puppies,-people,-barbie,-toys,-diy,-sylvanian,-blackandwhite,-monochrome";
+                picTag="&tags=cute,animal,puppies,-people,-barbie,-toys,-diy,-human,-sl,-gacha,-sylvanian,-blackandwhite,-monochrome";
                 pageNum++;
                 apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
             break;
@@ -113,7 +116,14 @@ $("#emailBtn").on("click", function(event){
         }
         
         $("#results").html('');
-        photoResults();
+
+        do {
+            photoResults();
+            pageNum ++;
+        }
+        while (numPhotos < 19);
+        numPhotos = 0;
+
     });
 
 function photoResults() {
@@ -126,21 +136,25 @@ function photoResults() {
         // if not use the photo, else don't use it
         // this removes the chance of redundant photos by same photographer
         $.each(json.photos.photo,function(i,myresult){
-            if (idArray.indexOf(myresult.owner) === -1) {
-                // this owner not in array so push owner's id into array
-                owner = myresult.owner;
-                idArray.push(owner);
-                // get all the sizes of that photo by using its id (myresult.id)
-                apiurl_size = "https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&photo_id=" + myresult.id + "&format=json&nojsoncallback=1";
-                // checking to see if the photo has the specified width of 150px
-                //if it does  prepend it on the page in #results
-                $.getJSON(apiurl_size,function(size){
-                    if (size.sizes.size[1].width == selected_size) {
-                        photoSource = size.sizes.size[1].source;
-                        console.log('size.sizes.size[1].source', photoSource);
-                        $("#results").prepend('<p><a href="'+ size.sizes.size[1].url + '" target="_blank"><img src="'+ size.sizes.size[1].source +'"/></a></p>');
-                    };
-                });           
+            if ( numPhotos < 18 ) {
+                if (idArray.indexOf(myresult.owner) === -1) {
+                    // this owner not in array so push owner's id into array
+                    owner = myresult.owner;
+                    idArray.push(owner);
+                    // get all the sizes of that photo by using its id (myresult.id)
+                    apiurl_size = "https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&photo_id=" + myresult.id + "&format=json&nojsoncallback=1";
+                    // checking to see if the photo has the specified width of 150px
+                    //if it does  prepend it on the page in #results
+                    $.getJSON(apiurl_size,function(size){
+                        if (size.sizes.size[1].width == selected_size) {
+                            photoSource = size.sizes.size[1].source;
+                            console.log('size.sizes.size[1].source', photoSource);
+                            numPhotos ++;
+                            console.log('numPhotos', numPhotos);
+                            $("#results").prepend('<p><a href="'+ size.sizes.size[1].url + '" target="_blank"><img src="'+ size.sizes.size[1].source +'"/></a></p>');
+                        };
+                    });           
+                };
             };
         });
     }); 
