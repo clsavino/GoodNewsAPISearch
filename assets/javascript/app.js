@@ -58,7 +58,7 @@ $.ajax(
                     console.log(searchResult);
                     console.log("URL: " + searchResult.data.url);
                     var title = searchResult.data.title;
-                    $('#redditNews').append('<a href="' + searchResult.data.url + '">' + '<img src="' + searchResult.data.thumbnail + '"/>' + title + '</a>' + '<br>');
+                    $('#redditNews').append('<div class="redditResult"><a href="' + searchResult.data.url + '">' + '<img src="' + searchResult.data.thumbnail + '"/>' + title + '</a></div>' + '<br>');
                 });
             } else {
                 console.log("No subreddits match the search query!");

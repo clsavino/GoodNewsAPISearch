@@ -3,6 +3,7 @@
 }
 
 .box{
+	background-image: url(../images/concrete_seamless.png);
 	height: 500px;
 	overflow: scroll;
 	background-color: white;
@@ -26,21 +27,32 @@
 /*new styling below*/
 
 body{
-	background-image: url(../images/concrete_seamless.png);
+	background-image: url(http://www.intrawallpaper.com/static/images/abstract-mosaic-background.png);
+	background-size: cover;
+	background-position: center center;
 }
 
 .pageHeader{
 	background-image: url(http://wallpapersdesktops.com/wp-content/uploads/2015/11/double-rainbow-10.jpeg);
 	background-size: cover;
 	background-position: center center;
-	height: 100px;
+	height: 150px;
     padding: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
+}
+
+.redditResult{
+	background-color: #dddddd;
+	border: 2px solid black;
+	border-radius: 5px;
+	padding: 5px;
 }
 
 .pageHeader h1  {
 	color: white;
     margin-top: 12px;
+    margin-bottom: 5px;
     font-size: 30px;
 }
 
