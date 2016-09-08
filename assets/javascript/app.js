@@ -19,6 +19,26 @@ var pandaPageNum = pageNum;
 
 var searchTerm = 'UpliftingNews';
 
+//create on change function for news dropdownbox 
+ $("#newsChoice").on("change", function(){
+        var option1 = $(this).val();
+        //usw switch case scenario for going between dropbox choices
+        switch(option1) {
+            case "uplifting":
+            break;
+            case "goodNews":
+            break;
+            case "feelgood":
+            break;
+        }
+        
+        //clears div
+        $("#newsLinks").html('');
+        newsResults(); //calls news results function 
+    });
+
+//wraps function around ajax call appending news results into div
+function newsResults(){
 $.ajax(
     "https://www.reddit.com//r/" + searchTerm + ".json",
     {
@@ -40,8 +60,8 @@ $.ajax(
         error: function() {
             alert("Something didn't work!");
         }
-    }
-);
+    })
+};
 
 //  Button for adding a User
 $("#emailBtn").on("click", function(event){
