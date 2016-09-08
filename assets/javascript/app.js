@@ -14,10 +14,15 @@ var selected_size = 150;
 var idArray = [];
 var owner = '';
 var email ='';
-var pageNum = 0;
+var pageNum = 1;
 var pandaPageNum = pageNum;
 
+// Load news stories so they appear on page load
 var searchTerm = 'UpliftingNews';
+newsResults();
+// Load animal photos so they appear on page load
+apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=cute,animal,babies,-people,-puppies,-kitten,-beanie,-barbie,-toys,-toy,-sl,-alge,-sylvanian,-blackandwhite,-monochrome,-goldeneye,-fabric,-spoonflower&tag_mode=all&sort=interestingness-desc&page=1&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
+photoResults();
 
 //create on change function for news dropdownbox 
  $("#newsChoice").on("change", function(){
@@ -108,10 +113,10 @@ $("#emailBtn").on("click", function(event){
         }
         
         $("#results").html('');
-        resultsShown();
+        photoResults();
     });
 
-function resultsShown() {
+function photoResults() {
     // get a json object from the Flickr API
     $.getJSON(apiurl,function(json){
         $results = json.photos;
@@ -139,6 +144,6 @@ function resultsShown() {
             };
         });
     }); 
-} // end of resultsShown()
+} // end of photoResults()
 
 }); //end of  $(document).ready(function()
