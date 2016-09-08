@@ -12,10 +12,6 @@
 	margin-bottom: 20px;
 }
 
-p.navbar-text {
-	color: #777777;
-}
-
 #results p {
 	display: inline-block;
 	margin: 0 auto;
@@ -25,10 +21,6 @@ p.navbar-text {
 #results img {
 	width: 150px;
 	height: 150px;
-}
-
-h2 {
-	text-align: center;
 }
 
 /*new styling below*/
@@ -41,14 +33,42 @@ body{
 	background-image: url(http://wallpapersdesktops.com/wp-content/uploads/2015/11/double-rainbow-10.jpeg);
 	background-size: cover;
 	background-position: center center;
+	height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.pageHeader h1  {
+	color: white;
+    margin-top: 12px;
+    font-size: 30px;
+}
+
+.pageHeader h4 {
+	color: white;
+}
+
+.dropdown {
+	margin-top: 10px;
 }
 
 .options{
-	font-size: 5em;
+	font-size: 16px;
+	padding: 5px;
 }
 
 img{
 	margin: 10px;
 	border: 2px solid black;
 	border-radius: 5px;
+}
+
+#copyright {
+	color: #808080;
+	font-size: 14px;
+}
+
+.row3Text {
+	color: #808080;
+	font-size: 20px;
 }

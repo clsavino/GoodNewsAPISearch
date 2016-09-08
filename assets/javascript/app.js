@@ -22,16 +22,18 @@ var searchTerm = 'UpliftingNews';
 //create on change function for news dropdownbox 
  $("#newsChoice").on("change", function(){
         var option1 = $(this).val();
-        //usw switch case scenario for going between dropbox choices
         switch(option1) {
             case "uplifting":
+                searchTerm = "UpliftingNews";
             break;
-            case "goodNews":
+            case "goodnews":
+                searchTerm = "goodnews";
             break;
             case "feelgood":
+                searchTerm = "feelgood";
             break;
         }
-        
+        console.log('searchTerm ', searchTerm);
         //clears div
         $("#newsLinks").html('');
         newsResults(); //calls news results function 
