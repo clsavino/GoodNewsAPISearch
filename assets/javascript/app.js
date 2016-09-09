@@ -21,9 +21,10 @@ var numPhotos = 0;
 var searchTerm = 'UpliftingNews';
 newsResults();
 // Load animal photos so they appear on page load
-apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=cute,animal,babies,-people,-puppies,-kitten,-beanie,-barbie,-toys,-toy,-sl,-alge,-sylvanian,-blackandwhite,-monochrome,-goldeneye,-fabric,-spoonflower&tag_mode=all&sort=interestingness-desc&page=1&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
+apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=cute,animal,babies,-pig,-puppies,-kittens,-blood,-people,-beanie,-barbie,-toys,-toy,-sl,-alge,-design,-sylvanian,-blackandwhite,-monochrome,-goldeneye,-fabric,-spoonflower&tag_mode=all&sort=interestingness-desc&page=1&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
+console.log('calling photoResults');
 photoResults();
-
+console.log('--- end of photoResults');
 //create on change function for news dropdownbox 
  $("#newsChoice").on("change", function(){
         var option1 = $(this).val();
@@ -95,7 +96,7 @@ $("#emailBtn").on("click", function(event){
         var option = $(this).val();
         switch(option) {
             case "babyAnimals":
-                picTag="&tags=cute,animal,babies,-blood,-people,-puppies,-kitten,-beanie,-barbie,-toys,-toy,-sl,-design,-sylvanian,-blackandwhite,-monochrome,-goldeneye,-fabric,-spoonflower";
+                pictag="&tags=cute,animal,babies,-blood,-people,-puppies,-kitten,-beanie,-barbie,-toys,-toy,-sl,-alge,-design,-sylvanian,-blackandwhite,-monochrome,-goldeneye,-fabric,-spoonflower";
                 pageNum++;
                 console.log('pageNum' , pageNum);
                 apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
@@ -117,8 +118,7 @@ $("#emailBtn").on("click", function(event){
         }
         
         $("#results").html('');
-            photoResults();
-
+        photoResults();
     });
 
 function photoResults() {
