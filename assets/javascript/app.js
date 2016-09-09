@@ -75,19 +75,19 @@ $.ajax(
 
 //  Button for adding a User
 $("#emailBtn").on("click", function(event){
-	event.preventDefault();
-	// Grabs user input
-	email = $("#emailInput").val().trim();	
+    event.preventDefault();
+    // Grabs user input
+    email = $("#emailInput").val().trim();  
 
-	// Push email entered into database
-	database.ref().push({
-		email: email,		
-	})
+    // Push email entered into database
+    database.ref().push({
+        email: email,       
+    })
 
-	// Clears the text-box
-	$("#emailInput").val("");
-	//Prevents moving to new page
-	return false;
+    // Clears the text-box
+    $("#emailInput").val("");
+    //Prevents moving to new page
+    return false;
 });
 
     $("#photoChoice").on("change", function(){
