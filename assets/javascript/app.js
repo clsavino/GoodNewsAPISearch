@@ -22,8 +22,9 @@ var searchTerm = 'UpliftingNews';
 newsResults();
 // Load animal photos so they appear on page load
 apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=cute,animal,babies,-people,-puppies,-kitten,-beanie,-barbie,-toys,-toy,-sl,-alge,-sylvanian,-blackandwhite,-monochrome,-goldeneye,-fabric,-spoonflower&tag_mode=all&sort=interestingness-desc&page=1&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
+console.log('calling photoResults');
 photoResults();
-
+console.log('--- end of photoResults');
 //create on change function for news dropdownbox 
  $("#newsChoice").on("change", function(){
         var option1 = $(this).val();
@@ -117,14 +118,9 @@ $("#emailBtn").on("click", function(event){
         }
         
         $("#results").html('');
-
-        do {
-            photoResults();
-            pageNum ++;
-        }
-        while (numPhotos < 19);
-        numPhotos = 0;
-
+        console.log('calling photoResults');
+        photoResults();
+        console.log('---------end of photoResults');
     });
 
 function photoResults() {
@@ -137,7 +133,7 @@ function photoResults() {
         // if not use the photo, else don't use it
         // this removes the chance of redundant photos by same photographer
         $.each(json.photos.photo,function(i,myresult){
-            if ( numPhotos < 18 ) {
+                numPhotos = 1;
                 if (idArray.indexOf(myresult.owner) === -1) {
                     // this owner not in array so push owner's id into array
                     owner = myresult.owner;
@@ -153,10 +149,10 @@ function photoResults() {
                             numPhotos ++;
                             console.log('numPhotos', numPhotos);
                             $("#results").prepend('<p><a href="'+ size.sizes.size[1].url + '" target="_blank"><img src="'+ size.sizes.size[1].source +'"/></a></p>');
-                        };
+                        }
                     });           
-                };
-            };
+                }
+            
         });
     }); 
 } // end of photoResults()
