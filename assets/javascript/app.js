@@ -59,13 +59,9 @@ $.ajax(
                     console.log(searchResult);
                     console.log("URL: " + searchResult.data.url);
                     var title = searchResult.data.title;
-                    // if (searchResult.data.thumbnail != "self" ) {
-                    //     $('#newsLinks').prepend('<div class="redditResult"><a href="' + searchResult.data.url + '">' + '<img src="' + searchResult.data.thumbnail + '"/>' + title + '</a></div>' + '<br>');
-                    // };
                     if (searchResult.data.thumbnail != "self" ) {
-                        $('#newsLinks').prepend('<div class="redditResult text-center"><div class="redditImage"><a href="' + searchResult.data.url + '" target="_blank">' + '<img src="' + searchResult.data.thumbnail + '"/></a></div>' + '<div class="redditLink"><a href="' + searchResult.data.url + '" target="_blank">' + title + '</a></div></div>' + '<br>');
+                        $('#newsLinks').prepend('<div class="redditResult"><a href="' + searchResult.data.url + '">' + '<img src="' + searchResult.data.thumbnail + '"/>' + title + '</a></div>' + '<br>');
                     };
-
                 });
             } else {
                 console.log("No subreddits match the search query!");
