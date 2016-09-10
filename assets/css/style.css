@@ -122,3 +122,8 @@ img:hover{
 .redditResult.text-center:hover{
 	background-color: #2A9D8F;
 }
+
+#grad{
+	/*background: linear-gradient(red,orange,yellow,green,blue,indigo,violet);*/
+	background: linear-gradient(#264653, #2A9D8F, #E9C46A, #F4A261, #E76F51, #264653, #2A9D8F, #E9C46A, #F4A261, #E76F51, #264653, #2A9D8F, #E9C46A, #F4A261, #E76F51);
+}
