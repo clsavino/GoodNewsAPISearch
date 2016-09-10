@@ -20,11 +20,12 @@ var numPhotos = 0;
 // Load news stories so they appear on page load
 var searchTerm = 'UpliftingNews';
 newsResults();
+
 // Load animal photos so they appear on page load
-apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=cute,animal,babies,-pig,-puppies,-kittens,-blood,-people,-beanie,-barbie,-toys,-toy,-sl,-alge,-design,-sylvanian,-blackandwhite,-monochrome,-goldeneye,-fabric,-spoonflower&tag_mode=all&sort=interestingness-desc&page=1&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
-console.log('calling photoResults');
+apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=cute,animal,babies,-pig,-puppies,-kittens,-blood,-people,-beanie,-barbie,-toys,-toy,-sl,-alge,-design,-sylvanian,-blackandwhite,-goldeneye,-fabric,-spoonflower&tag_mode=all&sort=interestingness-desc&page=1&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
+
 photoResults();
-console.log('--- end of photoResults');
+
 //create on change function for news dropdownbox 
  $("#newsChoice").on("change", function(){
         var option1 = $(this).val();
@@ -40,7 +41,6 @@ console.log('--- end of photoResults');
                 searchTerm = "feelgood";
             break;
         }
-        console.log('searchTerm ', searchTerm);
         //clears div
         $("#newsLinks").html('');
         newsResults(); //calls news results function 
@@ -96,7 +96,11 @@ $("#emailBtn").on("click", function(event){
         var option = $(this).val();
         switch(option) {
             case "babyAnimals":
+<<<<<<< HEAD
+                pictag="&tags=cute,animal,babies,-pig,-puppies,-kittens,-blood,-people,-beanie,-barbie,-toys,-toy,-sl,-alge,-design,-sylvanian,-blackandwhite,-goldeneye,-fabric,-spoonflower";
+=======
                 pictag="&tags=cute,animal,babies,-blood,-people,-puppies,-kitten,-beanie,-barbie,-toys,-toy,-sl,-alge,-design,-sylvanian,-blackandwhite,-monochrome,-goldeneye,-fabric,-spoonflower";
+>>>>>>> e5052202670640e57cb89001da1b4b9f822c60fc
                 pageNum++;
                 console.log('pageNum' , pageNum);
                 apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
