@@ -47,6 +47,21 @@ body{
     margin-top: 20px;
     margin-bottom: 10px;
 }
+#wells{
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-left: 0px;
+	margin-bottom: 0px;
+	border-bottom-width: 0px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-left-width: 0px;
+	background-color: rgba(231,75,71,0.34);
+	border-color: #fbeed5;
+	color: #e53c37;
+	display: none;
+}
 
 h3{
 	color: #E9D985;
