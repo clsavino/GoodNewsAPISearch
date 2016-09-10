@@ -3,14 +3,15 @@
 }
 
 .box{
-	background-image: url(../images/concrete_seamless.png);
+	/*background-image: url(../images/concrete_seamless.png);*/
+	/*background-color: #439A86;*/
+	background-color: #E76F51;
 	height: 500px;
 	overflow: scroll;
-	background-color: white;
 	border: 4px solid #336699;
 	border-radius: 5px;
 	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 50px;
 }
 
 #results p {
@@ -27,19 +28,27 @@
 /*new styling below*/
 
 body{
-	background-image: url(http://www.intrawallpaper.com/static/images/abstract-mosaic-background.png);
+	/*background-image: url(http://www.intrawallpaper.com/static/images/abstract-mosaic-background.png);
 	background-size: cover;
-	background-position: center center;
+	background-position: center center;*/
+	/*background-color: #007991;*/
+	background-color: #264653;
 }
 
 .pageHeader{
-	background-image: url(http://wallpapersdesktops.com/wp-content/uploads/2015/11/double-rainbow-10.jpeg);
+	/*background-image: url(http://wallpapersdesktops.com/wp-content/uploads/2015/11/double-rainbow-10.jpeg);
 	background-size: cover;
-	background-position: center center;
+	background-position: center center;*/
+	/*background-color: #222E50;*/
+	background-color: #2A9D8F;
 	height: 150px;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 10px;
+}
+
+h3{
+	color: #E9D985;
 }
 
 .redditResult{
@@ -57,7 +66,7 @@ body{
     font-size: 60px;
 }
 
-.pageHeader h4 {
+.pageHeader h4{
 	color: white;
 }
 
@@ -86,7 +95,7 @@ img:hover{
 }
 
 .row3Text {
-	color: #808080;
+	color: #E9D985;
 	font-size: 20px;
 }
 
@@ -109,5 +118,5 @@ img:hover{
 }
 
 .redditResult.text-center:hover{
-	background-color: mediumturquoise;
+	background-color: #2A9D8F;
 }
