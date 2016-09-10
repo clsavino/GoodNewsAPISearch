@@ -96,11 +96,9 @@ $("#emailBtn").on("click", function(event){
         var option = $(this).val();
         switch(option) {
             case "babyAnimals":
-<<<<<<< HEAD
-                pictag="&tags=cute,animal,babies,-pig,-puppies,-kittens,-blood,-people,-beanie,-barbie,-toys,-toy,-sl,-alge,-design,-sylvanian,-blackandwhite,-goldeneye,-fabric,-spoonflower";
-=======
+
                 pictag="&tags=cute,animal,babies,-blood,-people,-puppies,-kitten,-beanie,-barbie,-toys,-toy,-sl,-alge,-design,-sylvanian,-blackandwhite,-monochrome,-goldeneye,-fabric,-spoonflower";
->>>>>>> e5052202670640e57cb89001da1b4b9f822c60fc
+
                 pageNum++;
                 console.log('pageNum' , pageNum);
                 apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
