@@ -66,11 +66,11 @@ $.ajax(
                     };
                 });
             } else {
-                console.log("No subreddits match the search query!");
+                throw new Error("No subreddits match the search query!");
             }
         },
         error: function() {
-            alert("Something didn't work!");
+            $("#wells").append("<strong>Warning!!!</strong>Something didn't work!");
         }
     })
 };
