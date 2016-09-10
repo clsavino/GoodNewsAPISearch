@@ -76,6 +76,10 @@ img{
 	border-radius: 5px;
 }
 
+img:hover{
+	border: solid goldenrod;
+}
+
 #copyright {
 	color: #808080;
 	font-size: 14px;
@@ -91,4 +95,18 @@ img{
 	height: 0;
 	width: 100%;
 	margin: 0;
+}
+
+.LINK{
+	font-size: 1.3em;
+	color: midnightblue;
+	font-family: 'ABeeZee';
+}
+
+.LINK:hover{
+	color: white;
+}
+
+.redditResult.text-center:hover{
+	background-color: mediumturquoise;
 }
