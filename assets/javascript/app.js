@@ -37,8 +37,17 @@ photoResults();
             case "goodnews":
                 searchTerm = "goodnews";
             break;
+            case "funnynews":
+                searchTerm = "offbeat";
+            break;
             case "feelgood":
                 searchTerm = "feelgood";
+            break;
+            case "newsbloopers":
+                searchTerm = "newsbloopers";
+            break;
+            case "cutenews":
+                searchTerm = "aww";
             break;
         }
         //clears div
