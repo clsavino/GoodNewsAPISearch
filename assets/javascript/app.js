@@ -43,7 +43,7 @@ photoResults();
         }
         //clears div
         $("#newsLinks").html('');
-        newsResults(); //calls news results function 
+        newsResults(); 
  });
 
 //wraps function around ajax call appending news results into div
@@ -61,7 +61,6 @@ $.ajax(
                     console.log("URL: " + searchResult.data.url);
                     var title = searchResult.data.title;
                     if (searchResult.data.thumbnail != "self" && searchResult.data.thumbnail != "default") {
-                        // $('#newsLinks').prepend('<div class="redditResult"><a href="' + searchResult.data.url + '">' + '<img src="' + searchResult.data.thumbnail + '"/>' + title + '</a></div>' + '<br>');
                         $('#newsLinks').prepend('<div class="redditResult text-center"><div class="redditImage"><a href="' + searchResult.data.url + '" target="_blank">' + '<img src="' + searchResult.data.thumbnail + '"/></a></div>' + '<div class="redditLink"><a class="LINK" href="' + searchResult.data.url + '" target="_blank">' + title + '</a></div></div>' + '<br>');
                     };
                 });
@@ -75,17 +74,15 @@ $.ajax(
     })
 };
 
-//  Button for adding a User
+//  Button for adding a Subscriber
 $("#emailBtn").on("click", function(event){
     event.preventDefault();
     // Grabs user input
     email = $("#emailInput").val().trim();  
-
     // Push email entered into database
     database.ref().push({
         email: email,       
     })
-
     // Clears the text-box
     $("#emailInput").val("");
     //Prevents moving to new page
@@ -96,9 +93,7 @@ $("#emailBtn").on("click", function(event){
         var option = $(this).val();
         switch(option) {
             case "babyAnimals":
-
                 pictag="&tags=cute,animal,babies,-blood,-people,-puppies,-kitten,-beanie,-barbie,-toys,-toy,-sl,-alge,-design,-sylvanian,-blackandwhite,-monochrome,-goldeneye,-fabric,-spoonflower";
-
                 pageNum++;
                 console.log('pageNum' , pageNum);
                 apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
@@ -117,8 +112,7 @@ $("#emailBtn").on("click", function(event){
                 picTag="&tags=cute,animal,monkeys,-people,-dog,-giraffes,-bird,-duck,-fun,-black,-blackandwhite,-textile,-spoonflower,-monochrome,-design,-phallus";
                 apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
             break;
-        }
-        
+        }       
         $("#results").html('');
         photoResults();
     });
