@@ -10,8 +10,9 @@
 var database = firebase.database(); 
 
 var apiurl,apiurl_size,myresult,size,selected_size,picTag;
-var selected_size = 150;
+var selected_size = 240;
 var idArray = [];
+var photoArray = [];
 var owner = '';
 var email ='';
 var pageNum = 1;
@@ -22,8 +23,7 @@ var searchTerm = 'UpliftingNews';
 newsResults();
 
 // Load animal photos so they appear on page load
-apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=cute,animal,babies,-pig,-puppies,-kittens,-blood,-people,-beanie,-barbie,-toys,-toy,-sl,-alge,-design,-sylvanian,-blackandwhite,-goldeneye,-fabric,-spoonflower&tag_mode=all&sort=interestingness-desc&page=1&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
-
+apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=cute,animal,babies,-pork,-blood,-people,-puppies,-funny,-beanie,-barbie,-toys,-kiss,-sl,-alge,-design,-sylvanian,-blackandwhite,-goldeneye,-fabric,-spoonflower&tag_mode=all&sort=interestingness-desc&page=1&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
 photoResults();
 
 //create on change function for news dropdownbox 
@@ -102,24 +102,24 @@ $("#emailBtn").on("click", function(event){
         var option = $(this).val();
         switch(option) {
             case "babyAnimals":
-                pictag="&tags=cute,animal,babies,-blood,-people,-puppies,-kitten,-beanie,-barbie,-toys,-toy,-sl,-alge,-design,-sylvanian,-blackandwhite,-monochrome,-goldeneye,-fabric,-spoonflower";
+                pictag="&tags=cute,animal,babies,-pork,-blood,-people,-puppies,-kitten,-beanie,-barbie,-toys,-toy,-sl,-alge,-design,-sylvanian,-blackandwhite,-goldeneye,-fabric,-spoonflower";
                 pageNum++;
                 console.log('pageNum' , pageNum);
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
             break;
             case "puppies":
                 picTag="&tags=cute,animal,puppies,-design,-people,-barbie,-toys,-diy,-human,-sl,-gacha,-sylvanian,-blackandwhite,-monochrome";
                 pageNum++;
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
             break;
             case "kittens":
                 picTag="&tags=cute,animal,kittens,-people,-design,-barbie,-blackandwhite,-monochrome-toys,-sylvanian,";
                 pageNum++;
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
             break;
             case "monkeys":
                 picTag="&tags=cute,animal,monkeys,-people,-dog,-giraffes,-bird,-duck,-fun,-black,-blackandwhite,-textile,-spoonflower,-monochrome,-design,-phallus";
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=50&format=json&nojsoncallback=1";
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
             break;
         }       
         $("#results").html('');
@@ -130,33 +130,35 @@ function photoResults() {
     // get a json object from the Flickr API
     $.getJSON(apiurl,function(json){
         $results = json.photos;
-        console.log('json object ', $results);
+        console.log('json object $results', $results);
         // for each photo get the photo info 
         // Check to see if this owner has a photo in the array already
         // if not use the photo, else don't use it
         // this removes the chance of redundant photos by same photographer
         $.each(json.photos.photo,function(i,myresult){
-                numPhotos = 1;
-                if (idArray.indexOf(myresult.owner) === -1) {
-                    // this owner not in array so push owner's id into array
-                    owner = myresult.owner;
-                    idArray.push(owner);
-                    // get all the sizes of that photo by using its id (myresult.id)
-                    apiurl_size = "https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&photo_id=" + myresult.id + "&format=json&nojsoncallback=1";
-                    // checking to see if the photo has the specified width of 150px
-                    //if it does  prepend it on the page in #results
-                    $.getJSON(apiurl_size,function(size){
-                        if (size.sizes.size[1].width == selected_size) {
-                            photoSource = size.sizes.size[1].source;
-                            console.log('size.sizes.size[1].source', photoSource);
-                            numPhotos ++;
-                            console.log('numPhotos', numPhotos);
-                            $("#results").prepend('<p><a href="'+ size.sizes.size[1].url + '" target="_blank"><img src="'+ size.sizes.size[1].source +'"/></a></p>');
-                        }
-                    });           
-                }
-            
+            numPhotos = 1;
+            if (idArray.indexOf(myresult.owner) === -1) {
+                // this owner not in array so push owner's id into array
+                owner = myresult.owner;
+                idArray.push(owner);
+                // get all the sizes of that photo by using its id (myresult.id)
+                apiurl_size = "https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&photo_id=" + myresult.id + "&format=json&nojsoncallback=1";
+                // checking to see if the photo has the specified width of 240px
+                //if it does, store image in photoArray and prepend it on the page in #results
+                $.getJSON(apiurl_size,function(size){
+                    if (size.sizes.size[3].width == selected_size) {
+                        photoSource = size.sizes.size[3].source;
+                        console.log('size.sizes.size[3].source', photoSource);
+                        numPhotos ++;
+                        console.log('numPhotos', numPhotos);
+                        photoArray.push(size.sizes.size[3].source);
+                        $("#results").append('<p><a href="'+ size.sizes.size[3].url + '" target="_blank"><img src="'+ size.sizes.size[3].source +'"/></a></p>');
+                    }
+                });           
+            }          
         });
+
+        
     }); 
 } // end of photoResults()
 
