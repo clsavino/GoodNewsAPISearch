@@ -15,7 +15,7 @@
 	margin: 0 auto;
 }
 
-#results img {
+img {
 	width: 150px;
 	height: 150px;
 }
@@ -48,7 +48,7 @@ body{
 	display: none;
 }
 
-h3{
+.row3Text h3{
 	color: #E9D985;
 }
 
@@ -79,12 +79,12 @@ h3{
 	padding: 5px;
 }
 
-img{
+#results img{
 	margin: 10px;
 	border-radius: 5px;
 }
 
-img:hover{
+#newsLinks img:hover{
 	transition: 0200;
 	border: 2px solid goldenrod;
 }
