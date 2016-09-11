@@ -13,6 +13,7 @@ var apiurl,apiurl_size,myresult,size,selected_size,picTag;
 var selected_size = 240;
 var idArray = [];
 var photoArray = [];
+var carouselArray = [];
 var owner = '';
 var email ='';
 var pageNum = 1;
@@ -29,7 +30,6 @@ photoResults();
 //create on change function for news dropdownbox 
  $("#newsChoice").on("change", function(){
         var option1 = $(this).val();
-        console.log('option1 ', option1);
         switch(option1) {
             case "uplifting":
                 searchTerm = "UpliftingNews";
@@ -63,11 +63,7 @@ $.ajax(
         // data: { q: searchTerm },
         success: function(responseData) {
             if (responseData.data.children.length > 0) {
-                console.log('# of results: ' + responseData.data.children.length);
                 $.each(responseData.data.children, function(idx, searchResult) {
-                    console.log("--- Title of Subreddit: " + searchResult.data.title);
-                    console.log(searchResult);
-                    console.log("URL: " + searchResult.data.url);
                     var title = searchResult.data.title;
                     if (searchResult.data.thumbnail != "self" && searchResult.data.thumbnail != "default") {
                         $('#newsLinks').prepend('<div class="redditResult text-center"><div class="redditImage"><a href="' + searchResult.data.url + '" target="_blank">' + '<img src="' + searchResult.data.thumbnail + '"/></a></div>' + '<div class="redditLink"><a class="LINK" href="' + searchResult.data.url + '" target="_blank">' + title + '</a></div></div>' + '<br>');
@@ -104,7 +100,6 @@ $("#emailBtn").on("click", function(event){
             case "babyAnimals":
                 pictag="&tags=cute,animal,babies,-pork,-blood,-people,-puppies,-kitten,-beanie,-barbie,-toys,-toy,-sl,-alge,-design,-sylvanian,-blackandwhite,-goldeneye,-fabric,-spoonflower";
                 pageNum++;
-                console.log('pageNum' , pageNum);
                 apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
             break;
             case "puppies":
@@ -148,18 +143,22 @@ function photoResults() {
                 $.getJSON(apiurl_size,function(size){
                     if (size.sizes.size[3].width == selected_size) {
                         photoSource = size.sizes.size[3].source;
-                        console.log('size.sizes.size[3].source', photoSource);
+                        console.log('size', size);
                         numPhotos ++;
                         console.log('numPhotos', numPhotos);
                         photoArray.push(size.sizes.size[3].source);
+                        carouselArray.push(size.sizes.size[6].source);
+
                         $("#results").append('<p><a href="'+ size.sizes.size[3].url + '" target="_blank"><img src="'+ size.sizes.size[3].source +'"/></a></p>');
                     }
-                });           
-            }          
-        });
-
-        
+                });  // end of .getJSON          
+            } //end of if idArray          
+        });  //end of .each()
+        console.log('photoArray ', photoArray);
+        console.log('carouselArray ', carouselArray);
     }); 
 } // end of photoResults()
+
+
 
 }); //end of  $(document).ready(function()

@@ -2,8 +2,15 @@ body{
 	background-color: #264653;
 }
 
-#emailInput, #emailSubmit{
-	font-size: 1em;
+.mainContainer {
+	overflow: auto;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 70%;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 .box{
@@ -125,4 +132,8 @@ body{
 
 #grad{
 	background: linear-gradient(#264653, #2A9D8F, #E9C46A, #F4A261, #E76F51, #264653, #2A9D8F, #E9C46A, #F4A261, #E76F51, #264653, #2A9D8F, #E9C46A, #F4A261, #E76F51);
+}
+
+#emailInput, #emailSubmit{
+	font-size: 1em;
 }
