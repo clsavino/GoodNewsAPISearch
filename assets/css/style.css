@@ -8,8 +8,9 @@ body{
 
 .box{
 	background-image: url(../images/concrete_seamless.png);
-	height: 4800px;
+	height: 100%;
 	overflow: auto;
+	border-radius: 5px;
 	margin-top: 20px;
 	margin-bottom: 50px;
 }
