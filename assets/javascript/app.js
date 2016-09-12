@@ -12,19 +12,16 @@ var database = firebase.database();
 var apiurl,apiurl_size,myresult,size,selected_size,picTag;
 var selected_size = 240;
 var idArray = [];
-var photoArray = [];
-var carouselArray = [];
 var owner = '';
 var email ='';
 var pageNum = 1;
-var numPhotos = 0;
 
 // Load news stories so they appear on page load
 var searchTerm = 'UpliftingNews';
 newsResults();
 
 // Load animal photos so they appear on page load
-apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=cute,animal,babies,-pork,-blood,-people,-puppies,-funny,-beanie,-barbie,-toys,-kiss,-sl,-alge,-design,-sylvanian,-blackandwhite,-goldeneye,-fabric,-spoonflower&tag_mode=all&sort=interestingness-desc&page=1&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
+apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=cute,animal,babies,-pork,-blood,-people,-puppies,-funny,-beanie,-barbie,-toys,-kiss,-sl,-alge,-design,-sylvanian,-blackandwhite,-goldeneye,-fabric,-spoonflower&tag_mode=all&sort=interestingness-desc&page=1&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=150&format=json&nojsoncallback=1";
 photoResults();
 
 //create on change function for news dropdownbox 
@@ -125,13 +122,13 @@ function photoResults() {
     // get a json object from the Flickr API
     $.getJSON(apiurl,function(json){
         $results = json.photos;
-        console.log('json object $results', $results);
+        idArray = [];
         // for each photo get the photo info 
         // Check to see if this owner has a photo in the array already
         // if not use the photo, else don't use it
         // this removes the chance of redundant photos by same photographer
         $.each(json.photos.photo,function(i,myresult){
-            numPhotos = 1;
+            
             if (idArray.indexOf(myresult.owner) === -1) {
                 // this owner not in array so push owner's id into array
                 owner = myresult.owner;
@@ -143,22 +140,35 @@ function photoResults() {
                 $.getJSON(apiurl_size,function(size){
                     if (size.sizes.size[3].width == selected_size) {
                         photoSource = size.sizes.size[3].source;
-                        console.log('size', size);
-                        numPhotos ++;
-                        console.log('numPhotos', numPhotos);
-                        photoArray.push(size.sizes.size[3].source);
-                        carouselArray.push(size.sizes.size[6].source);
-
-                        $("#results").append('<p><a href="'+ size.sizes.size[3].url + '" target="_blank"><img src="'+ size.sizes.size[3].source +'"/></a></p>');
+                        $("#results").append('<p><a href="' + size.sizes.size[3].url + '"target="_blank"><img class="fgPhotos" src="'+ photoSource + '"/></a></p>');
                     }
                 });  // end of .getJSON          
             } //end of if idArray          
         });  //end of .each()
-        console.log('photoArray ', photoArray);
-        console.log('carouselArray ', carouselArray);
     }); 
 } // end of photoResults()
 
+/*
+function startCarousel() {
+    // could use $(this) to get index of and start there
+    //var selectedImg = $(this).attr();
+    for (var i = 0; i < 26; i++) {
 
+        var $imgDiv = $('<div>');
+        $imgDiv.addClass('item');
+        if (i = 0) {
+            $imgDiv.addClass('active');
+        }
+        var $img = $('<img>');       
+        $img.addClass('carImg');
+        $img.attr('src', carouselArray[i]);
+        $imgDiv.append($img);
+        console.log('imgDiv ', $imgDiv);
+        $("#carItems").append($imgDiv);
+    }
 
+}
+
+$(document).on('click', '#fgPhotos', startCarousel);
+*/
 }); //end of  $(document).ready(function()
