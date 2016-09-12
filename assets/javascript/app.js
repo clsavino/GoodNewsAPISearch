@@ -15,6 +15,10 @@ var idArray = [];
 var owner = '';
 var email ='';
 var pageNum = 1;
+var babyAnimalsPageNum = 1;
+var puppiesPageNum = 1;
+var kittensPageNum = 1;
+var monkeysPageNum = 1;
 
 // Load news stories so they appear on page load
 var searchTerm = 'UpliftingNews';
@@ -95,23 +99,36 @@ $("#emailBtn").on("click", function(event){
         var option = $(this).val();
         switch(option) {
             case "babyAnimals":
-                pictag="&tags=cute,animal,babies,-pork,-blood,-people,-puppies,-kitten,-beanie,-barbie,-toys,-toy,-sl,-alge,-design,-sylvanian,-blackandwhite,-goldeneye,-fabric,-spoonflower";
-                pageNum++;
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
+                if (babyAnimalsPageNum > 4 ) {
+                    babyAnimalsPageNum = 1;
+                }
+                pictag="&tags=cute,animal,babies,-pork,-blood,-people,-puppies,-funny,-beanie,-barbie,-toys,-kiss,-sl,-pig,-design,-sylvanian,-blackandwhite,-goldeneye,-fabric,-spoonflower";
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + pictag + "&tag_mode=all&sort=interestingness-desc&page=" + babyAnimalsPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
+                babyAnimalsPageNum++;
             break;
             case "puppies":
+                if (puppiesPageNum > 4 ) {
+                    puppiesPageNum = 1;
+                }
                 picTag="&tags=cute,animal,puppies,-design,-people,-barbie,-toys,-diy,-human,-sl,-gacha,-sylvanian,-blackandwhite,-monochrome";
-                pageNum++;
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + puppiesPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
+                puppiesPageNum++;
             break;
             case "kittens":
-                picTag="&tags=cute,animal,kittens,-people,-design,-barbie,-blackandwhite,-monochrome-toys,-sylvanian,";
-                pageNum++;
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
+                if (kittensPageNum > 4 ) {
+                    kittensPageNum = 1;
+                }
+                picTag="&tags=cute,animal,kittens,-people,-design,-barbie,-blackandwhite,-monochrome-toys,-sylvanian,";                
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + kittensPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
+                kittensPageNum++;
             break;
             case "monkeys":
-                picTag="&tags=cute,animal,monkeys,-people,-dog,-giraffes,-bird,-duck,-fun,-black,-blackandwhite,-textile,-spoonflower,-monochrome,-design,-phallus";
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + pageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
+                if (monkeysPageNum > 2 ) {
+                    monkeysPageNum = 1;
+                }
+                picTag="&tags=cute,animal,monkeys,-rat,-people,-painting,-art,-dog,-giraffes,-bird,-duck,-fun,-cake,-hand,-textile,-spoonflower,-design,-phallus,-sunset,-city";
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + monkeysPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
+                monkeysPageNum++;
             break;
         }       
         $("#results").html('');
