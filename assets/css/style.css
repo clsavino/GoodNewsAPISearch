@@ -2,17 +2,6 @@ body{
 	background-color: #264653;
 }
 
-.mainContainer {
-	overflow: auto;
-}
-
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  width: 70%;
-  margin: auto;
-  margin-bottom: 20px;
-}
-
 .box{
 	background-image: url(../images/concrete_seamless.png);
 	min-height: 2000px;
