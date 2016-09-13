@@ -125,7 +125,15 @@ body{
 #grad{
 	background: linear-gradient(#264653, #2A9D8F, #E9C46A, #F4A261, #E76F51, #264653, #2A9D8F, #E9C46A, #F4A261, #E76F51, #264653, #2A9D8F, #E9C46A, #F4A261, #E76F51);
 }
-
-#emailInput, #emailSubmit{
+/*#emailInput, #emailSubmit{
 	font-size: 1em;
+}
+*/
+#mc_embed_signup{
+	background:#fff; 
+	clear:left; 
+	font:14px Helvetica,
+	Arial,sans-serif; 
+	width:100%;
+	float: right;
 }
