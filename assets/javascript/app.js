@@ -112,7 +112,7 @@ $("#emailBtn").on("click", function(event){
                 
             break;
             case "puppies":
-                if (puppiesPageNum > 4 ) {
+                if (puppiesPageNum > 3 ) {
                     puppiesPageNum = 1;
                 }
                 picTag="&tags=cute,animal,puppies,-design,-people,-barbie,-toys,-diy,-human,-sl,-gacha,-sylvanian,-blackandwhite,-monochrome";
@@ -120,11 +120,11 @@ $("#emailBtn").on("click", function(event){
                 puppiesPageNum++;
             break;
             case "kittens":
-                if (kittensPageNum > 4 ) {
+                if (kittensPageNum > 2 ) {
                     kittensPageNum = 1;
                 }
-                picTag="&tags=cute,animal,kittens,-people,-design,-drawing,-selfie,-barbie,-blackandwhite,-monochrome-toys,-sylvanian,";                
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + kittensPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=400&format=json&nojsoncallback=1";
+                picTag="&tags=cute,animal,kittens,-people,-design,-drawing,-selfie,-barbie,-blackandwhite,-monochrome,-toys,-sylvanian,";                
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + kittensPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=500&format=json&nojsoncallback=1";
                 kittensPageNum++;
             break;
             case "monkeys":
@@ -132,7 +132,7 @@ $("#emailBtn").on("click", function(event){
                     monkeysPageNum = 1;
                 }
                 picTag="&tags=cute,animal,monkeys,-rat,-people,-painting,-art,-dog,-giraffes,-bird,-duck,-fun,-cake,-hand,-textile,-spoonflower,-design,-phallus,-sunset,-city";
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + monkeysPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=200&format=json&nojsoncallback=1";
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + monkeysPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=300&format=json&nojsoncallback=1";
                 monkeysPageNum++;
             break;
         }       
