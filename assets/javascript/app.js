@@ -107,7 +107,7 @@ $("#emailBtn").on("click", function(event){
                 if (babyAnimalsPageNum > 4 ) {
                     babyAnimalsPageNum = 1;
                 }
-                pictag="&tags=cute,animal,babies,-blood,-people,-puppies,-funny,-beanie,-barbie,-toys,-kiss,-sl,-Pig,-design,-sylvanian,-blackandwhite,-goldeneye,-fabric,-spoonflower";
+                pictag="&tags=cute,animal,babies,-blood,-etsy,-photo,-funny,-beanie,-barbie,-toy,-toys,-kiss,-sl,-blackandwhite,-design,-stuffed,-illustration,-felt,-fabric,-spoonflower";
                 apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + pictag + "&tag_mode=all&sort=interestingness-desc&page=" + babyAnimalsPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=400&format=json&nojsoncallback=1";
                 
             break;
@@ -123,7 +123,7 @@ $("#emailBtn").on("click", function(event){
                 if (kittensPageNum > 4 ) {
                     kittensPageNum = 1;
                 }
-                picTag="&tags=cute,animal,kittens,-people,-design,-barbie,-blackandwhite,-monochrome-toys,-sylvanian,";                
+                picTag="&tags=cute,animal,kittens,-people,-design,-drawing,-selfie,-barbie,-blackandwhite,-monochrome-toys,-sylvanian,";                
                 apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + kittensPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=400&format=json&nojsoncallback=1";
                 kittensPageNum++;
             break;
