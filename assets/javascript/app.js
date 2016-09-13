@@ -37,7 +37,7 @@ photoResults();
         var option1 = $(this).val();
         switch(option1) {
             case "uplifting":
-                searchTerm = "DisgustingNews";
+                searchTerm = "UpliftingNews";
             break;
             case "goodnews":
                 searchTerm = "goodnews";
@@ -68,7 +68,6 @@ function newsResults(){
 $.ajax(
     "https://www.reddit.com//r/" + searchTerm + ".json",
     {
-        // data: { q: searchTerm },
         success: function(responseData) {
             if (responseData.data.children.length > 0) {
                 $.each(responseData.data.children, function(idx, searchResult) {
