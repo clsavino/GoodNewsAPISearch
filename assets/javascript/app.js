@@ -37,7 +37,7 @@ photoResults();
         var option1 = $(this).val();
         switch(option1) {
             case "uplifting":
-                searchTerm = "UpliftingNews";
+                searchTerm = "DisgustingNews";
             break;
             case "goodnews":
                 searchTerm = "goodnews";
@@ -55,8 +55,11 @@ photoResults();
                 searchTerm = "aww";
             break;
         }
-        //clears div
+        // hides error message and clears the news div 
+        $("#wells").css("display","none");
+        $("#wells").html('');
         $("#newsLinks").html('');
+        // gets the query results
         newsResults(); 
  });
 
@@ -79,7 +82,8 @@ $.ajax(
             }
         },
         error: function() {
-            $("#wells").append("<strong>Warning!!!</strong>Something didn't work!");
+            $("#wells").append("<strong>Warning!!!</strong> We were not able to retrieve news for that selection. Try another selection!");
+            $("#wells").css("display","block");
         }
     })
 };

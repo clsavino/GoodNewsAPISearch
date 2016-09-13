@@ -36,9 +36,12 @@ body{
 	border-top-width: 0px;
 	border-right-width: 0px;
 	border-left-width: 0px;
-	background-color: rgba(231,75,71,0.34);
 	border-color: #fbeed5;
-	color: #e53c37;
+	/*background-color: rgba(231,75,71,0.34);*/
+	/*color: #e53c37;*/
+	background-color: red;
+	font-weight: bolder;	
+	color: white;
 	display: none;
 }
 
