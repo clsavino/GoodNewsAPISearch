@@ -1,8 +1,8 @@
-body{
+body {
 	background-color: #264653;
 }
 
-.box{
+.box {
 	background-image: url(../images/concrete_seamless.png);
 	min-height: 2000px;
 	height: 100%;
@@ -17,7 +17,7 @@ body{
 	margin: 0 auto;
 }
 
-.pageHeader{
+.pageHeader {
 	background-color: #2A9D8F;
 	height: 150px;
     padding: 10px;
@@ -26,7 +26,7 @@ body{
     border: none;
 }
 
-#wells{
+#wells {
 	padding-bottom: 5px;
 	padding-top: 5px;
 	padding-right: 0px;
@@ -37,25 +37,23 @@ body{
 	border-right-width: 0px;
 	border-left-width: 0px;
 	border-color: #fbeed5;
-	/*background-color: rgba(231,75,71,0.34);*/
-	/*color: #e53c37;*/
 	background-color: red;
 	font-weight: bolder;	
 	color: white;
 	display: none;
 }
 
-.row3Text h3{
+.row3Text h3 {
 	color: #E9D985;
 }
 
-.redditResult{
+.redditResult {
 	background-color: #dddddd;
 	border-radius: 5px;
 	padding: 5px;
 }
 
-.pageHeader h1  {
+.pageHeader h1 {
 	color: white;
     margin-top: 12px;
     margin-bottom: 5px;
@@ -63,7 +61,7 @@ body{
     font-size: 60px;
 }
 
-.pageHeader h4{
+.pageHeader h4 {
 	color: white;
 }
 
@@ -71,21 +69,16 @@ body{
 	margin-top: 10px;
 }
 
-.options{
+.options {
 	font-size: 16px;
 	padding: 5px;
 }
 
-#results img{
+#results img {
 	margin: 10px;
 	border-radius: 5px;
 	width: 240px;
 	height: 160px;
-}
-
-#newsLinks img:hover{
-	transition: 0200;
-	border: 2px solid goldenrod;
 }
 
 #copyright {
@@ -98,26 +91,31 @@ body{
 	font-size: 2em;
 }
 
-.footer{
+.footer {
 	position: absolute;
 	height: 0;
 	width: 100%;
 	margin: 0;
 }
 
-.LINK{
+#newsLinks img:hover {
+	transition: 0200;
+	border: 2px solid goldenrod;
+}
+
+.LINK {
 	font-size: 1.3em;
 	color: midnightblue;
 	font-family: 'ABeeZee';
 }
 
-.LINK:hover{
+.LINK:hover {
 	transition: 0200;
 	color: white;
 	text-decoration: none;
 }
 
-.redditResult.text-center:hover{
+.redditResult.text-center:hover {
 	transition: 0200;  
 	background-color: #2A9D8F;
 }
@@ -125,12 +123,9 @@ body{
 #grad{
 	background: linear-gradient(#264653, #2A9D8F, #E9C46A, #F4A261, #E76F51, #264653, #2A9D8F, #E9C46A, #F4A261, #E76F51, #264653, #2A9D8F, #E9C46A, #F4A261, #E76F51);
 }
-/*#emailInput, #emailSubmit{
-	font-size: 1em;
-}
-*/
+
 #mc_embed_signup {
-	background:#fff; 
+	/*background:#fff; */
 	clear:left; 
 	font:14px Helvetica,Arial,sans-serif; 
 	width:100%;

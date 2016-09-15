@@ -1,12 +1,12 @@
  $(document).ready(function(){
  // Initialize Firebase
-  var config = {
+var config = {
     apiKey: "AIzaSyDGTncnIHRull__Yir9rcAeymPrEjC5nKY",
     authDomain: "good-news-api-search.firebaseapp.com",
     databaseURL: "https://good-news-api-search.firebaseio.com",
     storageBucket: "good-news-api-search.appspot.com",
   };
-  firebase.initializeApp(config);
+firebase.initializeApp(config);
 var database = firebase.database(); 
 
 var apiurl,apiurl_size,myresult,size,selected_size,picTag;
@@ -15,14 +15,12 @@ var idArray = [];
 var photoSource;
 var photoUrl;
 var owner = '';
-var email ='';
+
 var pageNum = 1;
 var babyAnimalsPageNum = 1;
 var puppiesPageNum = 1;
 var kittensPageNum = 1;
 var monkeysPageNum = 1;
-var owner = '';
-var email ='';
 
 // Load news stories so they appear on page load
 var searchTerm = 'UpliftingNews';
@@ -33,35 +31,35 @@ apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&tags
 photoResults();
 
 //create on change function for news dropdownbox 
- $("#newsChoice").on("change", function(){
-        var option1 = $(this).val();
-        switch(option1) {
-            case "uplifting":
-                searchTerm = "UpliftingNews";
-            break;
-            case "goodnews":
-                searchTerm = "goodnews";
-            break;
-            case "funnynews":
-                searchTerm = "offbeat";
-            break;
-            case "feelgood":
-                searchTerm = "feelgood";
-            break;
-            case "newsbloopers":
-                searchTerm = "newsbloopers";
-            break;
-            case "cutenews":
-                searchTerm = "aww";
-            break;
-        }
-        // hides error message and clears the news div 
-        $("#wells").css("display","none");
-        $("#wells").html('');
-        $("#newsLinks").html('');
-        // gets the query results
-        newsResults(); 
- });
+$("#newsChoice").on("change", function(){
+    var option1 = $(this).val();
+    switch(option1) {
+        case "uplifting":
+            searchTerm = "UpliftingNews";
+        break;
+        case "goodnews":
+            searchTerm = "goodnews";
+        break;
+        case "funnynews":
+            searchTerm = "offbeat";
+        break;
+        case "feelgood":
+            searchTerm = "feelgood";
+        break;
+        case "newsbloopers":
+            searchTerm = "newsbloopers";
+        break;
+        case "cutenews":
+            searchTerm = "aww";
+        break;
+    }
+    // hides error message and clears the news div 
+    $("#wells").css("display","none");
+    $("#wells").html('');
+    $("#newsLinks").html('');
+    // gets the query results
+    newsResults(); 
+});
 
 //wraps function around ajax call appending news results into div
 function newsResults(){
@@ -102,45 +100,45 @@ $("#feedbackBtn").on("click", function(event){
     return false;
 });
 
-    $("#photoChoice").on("change", function(){
-        var option = $(this).val();
-        switch(option) {
-            case "babyAnimals":
-                babyAnimalsPageNum++;
-                if (babyAnimalsPageNum > 4 ) {
-                    babyAnimalsPageNum = 1;
-                }
-                pictag="&tags=cute,animal,babies,-blood,-etsy,-photo,-funny,-beanie,-barbie,-toy,-toys,-kiss,-sl,-blackandwhite,-design,-stuffed,-illustration,-felt,-fabric,-spoonflower";
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + pictag + "&tag_mode=all&sort=interestingness-desc&page=" + babyAnimalsPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=400&format=json&nojsoncallback=1";              
-            break;
-            case "puppies":
-                if (puppiesPageNum > 3 ) {
-                    puppiesPageNum = 1;
-                }
-                picTag="&tags=cute,animal,puppies,-design,-people,-barbie,-toys,-diy,-human,-sl,-gacha,-sylvanian,-blackandwhite,-monochrome";
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + puppiesPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=400&format=json&nojsoncallback=1";
-                puppiesPageNum++;
-            break;
-            case "kittens":
-                if (kittensPageNum > 2 ) {
-                    kittensPageNum = 1;
-                }
-                picTag="&tags=cute,animal,kittens,-people,-design,-drawing,-selfie,-barbie,-blackandwhite,-monochrome,-toys,-sylvanian,";                
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + kittensPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=500&format=json&nojsoncallback=1";
-                kittensPageNum++;
-            break;
-            case "monkeys":
-                if (monkeysPageNum > 2 ) {
-                    monkeysPageNum = 1;
-                }
-                picTag="&tags=cute,animal,monkeys,-rat,-people,-painting,-art,-dog,-giraffes,-bird,-duck,-fun,-cake,-hand,-textile,-spoonflower,-design,-phallus,-sunset,-city";
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + monkeysPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=300&format=json&nojsoncallback=1";
-                monkeysPageNum++;
-            break;
-        }       
-        $("#results").html('');
-        photoResults();
-    });
+$("#photoChoice").on("change", function(){
+    var option = $(this).val();
+    switch(option) {
+        case "babyAnimals":
+            babyAnimalsPageNum++;
+            if (babyAnimalsPageNum > 4 ) {
+                babyAnimalsPageNum = 1;
+            }
+            pictag="&tags=cute,animal,babies,-blood,-etsy,-photo,-funny,-beanie,-barbie,-toy,-toys,-kiss,-sl,-blackandwhite,-design,-stuffed,-illustration,-felt,-fabric,-spoonflower";
+            apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + pictag + "&tag_mode=all&sort=interestingness-desc&page=" + babyAnimalsPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=400&format=json&nojsoncallback=1";              
+        break;
+        case "puppies":
+            if (puppiesPageNum > 3 ) {
+                puppiesPageNum = 1;
+            }
+            picTag="&tags=cute,animal,puppies,-design,-people,-barbie,-toys,-diy,-human,-sl,-gacha,-sylvanian,-blackandwhite,-monochrome";
+            apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + puppiesPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=400&format=json&nojsoncallback=1";
+            puppiesPageNum++;
+        break;
+        case "kittens":
+            if (kittensPageNum > 2 ) {
+                kittensPageNum = 1;
+            }
+            picTag="&tags=cute,animal,kittens,-people,-design,-drawing,-selfie,-barbie,-blackandwhite,-monochrome,-toys,-sylvanian,";                
+            apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + kittensPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=500&format=json&nojsoncallback=1";
+            kittensPageNum++;
+        break;
+        case "monkeys":
+            if (monkeysPageNum > 2 ) {
+                monkeysPageNum = 1;
+            }
+            picTag="&tags=cute,animal,monkeys,-rat,-people,-painting,-art,-dog,-giraffes,-bird,-duck,-fun,-cake,-hand,-textile,-spoonflower,-design,-phallus,-sunset,-city";
+            apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + picTag + "&tag_mode=all&sort=interestingness-desc&page=" + monkeysPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=300&format=json&nojsoncallback=1";
+            monkeysPageNum++;
+        break;
+    }       
+    $("#results").html('');
+    photoResults();
+});
 
 function photoResults() {
     var photoCount = 1;
