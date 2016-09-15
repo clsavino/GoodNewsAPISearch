@@ -88,16 +88,16 @@ $.ajax(
 };
 
 //  Button for adding a Subscriber
-$("#emailBtn").on("click", function(event){
+$("#feedbackBtn").on("click", function(event){
     event.preventDefault();
     // Grabs user input
-    email = $("#emailInput").val().trim();  
-    // Push email entered into database
+    feedback = $("#feedbackInput").val().trim();  
+    // Push feedback entered into database
     database.ref().push({
-        email: email,       
+        feedback: feedback,       
     })
     // Clears the text-box
-    $("#emailInput").val("");
+    $("#feedbackInput").val("");
     //Prevents moving to new page
     return false;
 });
@@ -111,8 +111,7 @@ $("#emailBtn").on("click", function(event){
                     babyAnimalsPageNum = 1;
                 }
                 pictag="&tags=cute,animal,babies,-blood,-etsy,-photo,-funny,-beanie,-barbie,-toy,-toys,-kiss,-sl,-blackandwhite,-design,-stuffed,-illustration,-felt,-fabric,-spoonflower";
-                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + pictag + "&tag_mode=all&sort=interestingness-desc&page=" + babyAnimalsPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=400&format=json&nojsoncallback=1";
-                
+                apiurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search" + pictag + "&tag_mode=all&sort=interestingness-desc&page=" + babyAnimalsPageNum + "&api_key=ef8008d23cf0b8eb80c8d4e1e8b4d49c&per_page=400&format=json&nojsoncallback=1";              
             break;
             case "puppies":
                 if (puppiesPageNum > 3 ) {
@@ -155,7 +154,6 @@ function photoResults() {
         // this removes the chance of redundant photos by same photographer
         $.each(json.photos.photo,function(i,myresult){
             if (photoCount < 49) {
-
                 if (idArray.indexOf(myresult.owner) === -1) {
                     // this owner not in array so push owner's id into array
                     owner = myresult.owner;
