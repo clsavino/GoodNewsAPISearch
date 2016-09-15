@@ -96,6 +96,7 @@ body {
 	height: 0;
 	width: 100%;
 	margin: 0;
+	background-image: url(../images/concrete_seamless.png);
 }
 
 #newsLinks img:hover {
@@ -125,8 +126,8 @@ body {
 }
 
 #mc_embed_signup {
-	/*background:#fff; */
 	clear:left; 
 	font:14px Helvetica,Arial,sans-serif; 
 	width:100%;
 }
+
