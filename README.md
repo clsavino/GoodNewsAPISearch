@@ -16,6 +16,10 @@
 
 ![Alt text](/assets/images/footer.PNG?raw=true "Photo of the footer with email subscription and feedback input")
 
+### Mobile Responsive Layout
+
+![Alt text](/assets/images/mobileResponsive.PNG?raw=true "Photo showing mobile responsive design")
+
 # Technologies Used
 ### The following technologies and tools were used in the development of this app.
 * **HTML**
