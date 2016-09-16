@@ -10,7 +10,9 @@ Feedback input from users is possible and all feedback is saved in Firebase. Ema
 # Screenshots
 Users can select news story and photo type from the dropdown boxexs.
 ![Alt text](/assets/images/dropdown.PNG?raw=true "Photo of the opening page with a dropdown box opened")
+
 At the bottom of the page there is an input box for an email subscription which works with the Mailchimp API to post the email into the Good News account. The footer includes an area to have users input their feedback for the app.
+
 ![Alt text](/assets/images/footer.PNG?raw=true "Photo of the footer with email subscription and feedback input")
 
 # Technologies Used
@@ -35,7 +37,7 @@ http://sheltered-beyond-53408.herokuapp.com/
 The Good News app is maintained in Github: 
 https://github.com/clsavino/GoodNewsAPISearch
 
-# JavaScript Ajax calls to get data from the Reddit and Flickr APIs
+# JavaScript Ajax calls to get data from Reddit and Flickr
 ![Alt text](/assets/images/redditCode.PNG?raw=true "Photo of code snippet of JavaScript using an Ajax call to the Reddit API")
 
 ![Alt text](/assets/images/flickrcode.PNG?raw=true "Photo of code snipped of JavaScript using an Ajax call to the Flickr API")
