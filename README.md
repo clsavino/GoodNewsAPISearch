@@ -22,7 +22,7 @@ The following technologies and tools were used in the development of this app.
 •	Bootstrap
 •	Firebase
 •	Ajax
-•	Reddit API, Flickr API, Mailchimp API and app
+•	Reddit API, Flickr API, Mailchimp API and app for styling emails to user confirming subscription
 
 # Built With
 •	Sublime Text
@@ -35,8 +35,9 @@ http://sheltered-beyond-53408.herokuapp.com/
 The Good News app is maintained in Github: 
 https://github.com/clsavino/GoodNewsAPISearch
 
-# JavaScript Ajax calls to get data the Reddit and Flickr APIs
+# JavaScript Ajax calls to get data from the Reddit and Flickr APIs
 ![Alt text](/assets/images/redditCode.PNG?raw=true "Photo of code snippet of JavaScript using an Ajax call to the Reddit API")
+
 ![Alt text](/assets/images/flickrcode.PNG?raw=true "Photo of code snipped of JavaScript using an Ajax call to the Flickr API")
 
 # Authors
