@@ -1,22 +1,22 @@
 # GoodNewsAPISearch
 
-### Tired of hearing about shootings, stabbings, bombings, and politics? This Good News aggregator grabs trending good news and “feelgood” photos. When you need a break you can open up the app and read some good news from around the world. There are 6 categories of uplifting, inspiring, and funny news. Plus, there are lots of cute photos to make you smile and say, "Awww".
+Tired of hearing about shootings, stabbings, bombings, and politics? This Good News aggregator grabs trending good news and “feelgood” photos. When you need a break you can open up the app and read some good news from around the world. There are 6 categories of uplifting, inspiring, and funny news. Plus, there are lots of cute photos to make you smile and say, "Awww".
 
-### Every news headline links to the page of the story for your reading pleasure and every photo to its Flickr location. Many photos can be downloaded because of a creative commons license. Click “Photo” to see the enlarged image, photographer, and other photos in that photo album.
+Every news headline links to the page of the story for your reading pleasure and every photo to its Flickr location. Many photos can be downloaded because of a creative commons license. Click “Photo” to see the enlarged image, photographer, and other photos in that photo album.
 
-### A rainbow of earthy flat UI colors is used on the page to complement the “feelgood” feeling users have perusing the site while looking at photos and selecting stories to read.
+A rainbow of earthy flat UI colors is used on the page to complement the “feelgood” feeling users have perusing the site while looking at photos and selecting stories to read.
 
-### Feedback input from users is possible and all feedback is saved in Firebase. Email subscription is done using the Mailchimp API and integrating the use of all their forms to communicate with the subscriber. Mailchimp forms were styled to coordinate with the web app. 
+Feedback input from users is possible and all feedback is saved in Firebase. Email subscription is done using the Mailchimp API and integrating the use of all their forms to communicate with the subscriber. Mailchimp forms were styled to coordinate with the web app. 
 
 # Screenshots
 ### Users can select the news story and photo type they want from the dropdown boxes.
 ![Alt text](/assets/images/dropdown.PNG?raw=true "Photo of the opening page with a dropdown box opened")
 
-### At the bottom of the page there is an input box for an email subscription which works with the Mailchimp API to post the email address into the Good News account. The footer includes an area to have users input their feedback for the app. all feedback is stored in Firebase.
+## At the bottom of the page there is an input box for an email subscription which works with the Mailchimp API to post the email address into the Good News account. The footer includes an area to have users input their feedback for the app. all feedback is stored in Firebase.
 
 ![Alt text](/assets/images/footer.PNG?raw=true "Photo of the footer with email subscription and feedback input")
 
-### Mobile Responsive Layout
+## Mobile Responsive Layout
 
 ![Alt text](/assets/images/mobileResponsive.PNG?raw=true "Photo showing mobile responsive design")
 
@@ -39,10 +39,10 @@
 * **Balsamiq Mockup**
 
 # Getting Started
-### The Heroku link to run Good News is: 
+## The Heroku link to run Good News is: 
 ### [Heroku](http://sheltered-beyond-53408.herokuapp.com)
 
-### The Good News app is maintained in Github: 
+## The Good News app is maintained in Github: 
 ### [clsavino/GoodNewsAPISearch](https://github.com/clsavino/GoodNewsAPISearch)
 
 # JavaScript Ajax calls to get data from Reddit and Flickr
