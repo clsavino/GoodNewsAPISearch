@@ -53,5 +53,4 @@
 # Authors
 * **Christi Savino**
 * **Ryan Osterman**
-* **Kevin Bryant **
-
+* **Kevin Bryant**
