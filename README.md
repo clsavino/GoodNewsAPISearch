@@ -8,15 +8,15 @@ A rainbow of earthy flat UI colors is used on the page to complement the “feel
 Feedback input from users is possible and all feedback is saved in Firebase. Email subscription is done using the Mailchimp API and integrating the use of all their forms to communicate with the subscriber. Mailchimp forms were styled to coordinate with the web app. 
 
 # Screenshots
-Users can select news story and photo type from the dropdown boxexs.
+### Users can select news story and photo type from the dropdown boxexs.
 ![Alt text](/assets/images/dropdown.PNG?raw=true "Photo of the opening page with a dropdown box opened")
 
-At the bottom of the page there is an input box for an email subscription which works with the Mailchimp API to post the email into the Good News account. The footer includes an area to have users input their feedback for the app.
+### At the bottom of the page there is an input box for an email subscription which works with the Mailchimp API to post the email into the Good News account. The footer includes an area to have users input their feedback for the app.
 
 ![Alt text](/assets/images/footer.PNG?raw=true "Photo of the footer with email subscription and feedback input")
 
 # Technologies Used
-The following technologies and tools were used in the development of this app.
+### The following technologies and tools were used in the development of this app.
 •	HTML
 •	CSS
 •	JavaScript
@@ -32,10 +32,11 @@ The following technologies and tools were used in the development of this app.
 •	Balsamiq Mockup
 
 # Getting Started
-The Heroku link to run Good News is: 
-http://sheltered-beyond-53408.herokuapp.com/
-The Good News app is maintained in Github: 
-https://github.com/clsavino/GoodNewsAPISearch
+### The Heroku link to run Good News is: 
+### http://sheltered-beyond-53408.herokuapp.com/
+
+### The Good News app is maintained in Github: 
+### https://github.com/clsavino/GoodNewsAPISearch
 
 # JavaScript Ajax calls to get data from Reddit and Flickr
 ![Alt text](/assets/images/redditCode.PNG?raw=true "Photo of code snippet of JavaScript using an Ajax call to the Reddit API")
