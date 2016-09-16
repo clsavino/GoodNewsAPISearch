@@ -18,26 +18,28 @@
 
 # Technologies Used
 ### The following technologies and tools were used in the development of this app.
-•	HTML
-•	CSS
-•	JavaScript
-•	JQuery
-•	Bootstrap
-•	Firebase
-•	Ajax
-•	Reddit API, Flickr API, Mailchimp API and app for styling emails to user confirming subscription
+* **HTML**
+* **CSS**
+* **JavaScript**
+* **JQuery**
+* **Bootstrap**
+* **Firebase**
+* **Ajax**
+* **Reddit API** 
+* **Flickr API** 
+* **Mailchimp API and app for styling emails to user confirming subscription**
 
 # Built With
-•	Sublime Text
-•	Trello Board - https://trello.com/b/PPM0Seds/good-news-api-search-project
-•	Balsamiq Mockup
+* **Sublime Text**
+* **Trello Board** [Trello Board](https://trello.com/b/PPM0Seds/good-news-api-search-project)
+* **Balsamiq Mockup**
 
 # Getting Started
 ### The Heroku link to run Good News is: 
-### http://sheltered-beyond-53408.herokuapp.com/
+### [Heroku](http://sheltered-beyond-53408.herokuapp.com)
 
 ### The Good News app is maintained in Github: 
-### https://github.com/clsavino/GoodNewsAPISearch
+### [clsavino/GoodNewsAPISearch](https://github.com/clsavino/GoodNewsAPISearch)
 
 # JavaScript Ajax calls to get data from Reddit and Flickr
 ![Alt text](/assets/images/redditCode.PNG?raw=true "Photo of code snippet of JavaScript using an Ajax call to the Reddit API")
@@ -45,6 +47,7 @@
 ![Alt text](/assets/images/flickrcode.PNG?raw=true "Photo of code snipped of JavaScript using an Ajax call to the Flickr API")
 
 # Authors
-•	Christi Savino
-•	Ryan Osterman
-•	Kevin Bryant
+* **Christi Savino**
+* **Ryan Osterman**
+* _Kevin Bryant_
+
