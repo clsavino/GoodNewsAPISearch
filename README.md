@@ -34,7 +34,7 @@ Feedback input from users is possible and all feedback is saved in Firebase. Ema
 * **Flickr API**
 * **Mailchimp API and app for styling emails to user confirming subscription**
 
-# JavaScript Ajax calls to get data from Reddit and Flickr
+## JavaScript Ajax calls to get data from Reddit and Flickr
 ![Alt text](/assets/images/redditCode.PNG?raw=true "Photo of code snippet of JavaScript using an Ajax call to the Reddit API")
 
 ![Alt text](/assets/images/flickrcode.PNG?raw=true "Photo of code snipped of JavaScript using an Ajax call to the Flickr API")
