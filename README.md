@@ -6,7 +6,7 @@ Every news headline links to the page of the story for your reading pleasure and
 
 A rainbow of earthy flat UI colors is used on the page to complement the “feelgood” feeling users have perusing the site while looking at photos and selecting stories to read.
 
-Feedback input from users is possible and all feedback is saved in Firebase. Email subscription is done using the Mailchimp API and integrating the use of all their forms to communicate with the subscriber. Mailchimp forms were styled to coordinate with the web app. 
+Feedback input from users is possible and all feedback is saved in Firebase. Email subscription is done using the Mailchimp API and integrating the use of all their forms to communicate with the subscriber. Mailchimp forms were styled to coordinate with the web app.
 
 # Screenshots
 #### Users can select the news story and photo type they want from the dropdown boxes.
@@ -30,26 +30,23 @@ Feedback input from users is possible and all feedback is saved in Firebase. Ema
 * **Bootstrap**
 * **Firebase**
 * **Ajax**
-* **Reddit API** 
-* **Flickr API** 
+* **Reddit API**
+* **Flickr API**
 * **Mailchimp API and app for styling emails to user confirming subscription**
-
-# Built With
-* **Sublime Text**
-* **Trello Board** [Trello Board](https://trello.com/b/PPM0Seds/good-news-api-search-project)
-* **Balsamiq Mockup**
-
-# Getting Started
-#### The Heroku link to run Good News is: 
-#### [Heroku](http://sheltered-beyond-53408.herokuapp.com)
-
-#### The Good News app is maintained in Github: 
-#### [clsavino/GoodNewsAPISearch](https://github.com/clsavino/GoodNewsAPISearch)
 
 # JavaScript Ajax calls to get data from Reddit and Flickr
 ![Alt text](/assets/images/redditCode.PNG?raw=true "Photo of code snippet of JavaScript using an Ajax call to the Reddit API")
 
 ![Alt text](/assets/images/flickrcode.PNG?raw=true "Photo of code snipped of JavaScript using an Ajax call to the Flickr API")
+
+# Built With
+* **Sublime Text**
+* **[Trello Board](https://trello.com/b/PPM0Seds/good-news-api-search-project)**
+* **Balsamiq Mockup**
+
+# Getting Started
+#### The Heroku link to run Good News is:
+#### [Heroku](http://sheltered-beyond-53408.herokuapp.com)
 
 # Authors
 * **Christi Savino**
